@@ -4,8 +4,6 @@
 // This is done with the closure below
 console.log("Executing");
 
-
-
 /* p5 Object Constructor */
 var sketch = function(p5) {
 
@@ -20,38 +18,24 @@ var sketch = function(p5) {
 
     p5.fill(0);
     p5.ellipse(100,100,10,10);
+    
+  }
 
+  var imgs = document.getElementsByTagName("img");  
 
-    /*/ Variable /*/
-
-    var imgs = document.getElementsByTagName("img");
-    //var img1 = p5.select(img);
-
+  if (imgs.length > 0 ) {  
     for (var i = 0; i < imgs.length ; i++) {
-       document.imgs[i].style.width = '300';
-
+     imgs[i].style.width = '300px';
     }
+  }
 
-    // if (imgs.length > 0 ) {
-
-    //   changeCSS();
-
-    // }
-
-    function changeCSS() {
-
-      console.log('img1');
+  function changeCSS() {
 
       //imgs.style("background-color", #000000);
-
-
       //document.getElementsByTagName("img").style.visibility='hidden';
-    }
-
+    
   }
 }
 
 /* The above function closure is passed into a p5 object constructor. this starts the sketch. */
 var myp5 = new p5(sketch);
-
-
